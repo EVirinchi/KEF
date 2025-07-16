@@ -1,0 +1,1578 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lora', serif; /* A more elegant serif font */
+    line-height: 1.8;
+    color: #4A4A4A; /* Softer dark grey */
+    background-color: #FDF7E4; /* Light creamy background */
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+/* Navigation */
+.navbar {
+    background: linear-gradient(135deg, #B22222 0%, #CD5C5C 100%); /* Vibrant red gradient for navbar */
+    padding: 1.2rem 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-logo h2 {
+    font-family: 'Playfair Display', serif; /* Decorative font for logo */
+    color: #FFD700; /* Gold */
+    font-weight: 700;
+    font-size: 2.2rem;
+    letter-spacing: 1.5px;
+}
+
+.nav-logo-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 14px;
+    border: 2.5px solid #ad7f07;
+    background: #fff8dc;
+    box-shadow: 0 2px 8px rgba(139,69,19,0.12);
+    vertical-align: middle;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+}
+
+.nav-link {
+    color: #FDF7E4; /* Creamy white */
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.4s ease;
+    padding: 0.7rem 1.5rem;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Remove animated underline for all links */
+.nav-link::before {
+    display: none;
+}
+
+/* Only the active link gets a static gold underline */
+.nav-link.active {
+    color: #FFD700;
+    background: rgba(255,215,0,0.1); /* Subtle gold tint */
+    border-bottom: 3px solid #FFD700;
+    transform: none;
+}
+
+/* Remove underline and color change on hover for non-active links */
+.nav-link:hover {
+    color: #FFD700;
+    background: rgba(255,215,0,0.1);
+    border-bottom: none;
+    transform: none;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    width: 30px;
+    height: 4px;
+    background: #FFD700; /* Gold bars */
+    margin: 4px 0;
+    transition: 0.3s;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #CD5C5C 0%, #B22222 100%); /* Deep fiery reds */
+    color: white;
+    position: relative;
+    overflow: hidden;
+    margin-top: 80px;
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/mandala2.png'); /* Changed to mandala2.png */
+    background-size: 200px 200px; /* Set size to 200px 200px */
+    background-repeat: repeat; /* Simple repeat */
+    background-position: center center; /* Centered */
+    opacity: 0.08; /* Adjust opacity for watermark effect, slightly less opaque */
+    z-index: 1;
+}
+
+.hero-content {
+    z-index: 2;
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-title {
+    font-family: 'Kaoly', 'Playfair Display', serif;
+    font-size: 4.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+    color: #FFF8DC; /* Cornsilk */
+}
+
+.hero-subtitle {
+    font-size: 1.6rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.95;
+    color: #FDF7E4;
+    font-style: italic;
+}
+
+.hero-details {
+    display: flex;
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.hero-detail {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-weight: 500;
+    font-size: 1.1rem;
+    background-color: rgba(255,255,255,0.15);
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255,255,255,0.3);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.hero-detail i {
+    font-size: 1.5rem;
+    color: #FFD700; /* Gold */
+}
+
+.cta-button {
+    display: inline-block;
+    background: #FFD700; /* Gold */
+    color: #8B4513; /* Earthy brown */
+    padding: 1.2rem 2.8rem;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(255,215,0,0.4);
+    border: none;
+    letter-spacing: 0.5px;
+}
+
+.cta-button:hover {
+    transform: translateY(-5px) scale(1.03);
+    background: #FFC000; /* Slightly darker gold */
+    box-shadow: 0 8px 25px rgba(255,192,0,0.6);
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice"><defs><pattern id="mandala" width="20" height="20" patternUnits="userSpaceOnUse" patternTransform="scale(2)"><path fill="rgba(255,255,255,0.05)" d="M5 0 L10 5 L5 10 L0 5 Z M15 0 L20 5 L15 10 L10 5 Z M0 15 L5 20 L10 15 L5 10 Z M10 15 L15 20 L20 15 L15 10 Z"/></pattern></defs><rect x="0" y="0" width="100%" height="100%" fill="url(%23mandala)"/></svg>') repeat;
+    opacity: 0.2;
+    z-index: 1;
+}
+
+/* Section Styles */
+section {
+    padding: 6rem 0;
+    position: relative;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 4rem;
+    color: #8B4513; /* Earthy brown */
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 5px;
+    background: linear-gradient(90deg, #FFD700 0%, #CD5C5C 100%); /* Gold to red */
+    border-radius: 3px;
+}
+
+/* Overview Section */
+.overview {
+    background: #FDF7E4;
+    position: relative;
+    overflow: hidden;
+}
+
+.overview::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/mandala2.png'); /* Changed to mandala2.png */
+    background-size: 200px 200px; /* Set size to 200px 200px */
+    background-repeat: repeat; /* Simple repeat */
+    background-position: center center; /* Centered */
+    opacity: 0.08; /* Adjust opacity for watermark effect */
+    z-index: 0;
+}
+
+.overview-content {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.overview-text {
+    font-family: 'Lora', serif;
+    font-size: 1.35rem;
+    margin-bottom: 2rem;
+    line-height: 2;
+    color: #5A5A5A;
+    text-align: justify; /* Justify for a more traditional look */
+    padding: 0 20px;
+}
+
+/* Objectives Section */
+.objectives {
+    background: #FFF8DC; /* Slightly darker cream */
+    position: relative;
+    overflow: hidden;
+}
+
+.objectives::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/mandala2.png'); /* Changed to mandala2.png */
+    background-size: 200px 200px; /* Set size to 200px 200px */
+    background-repeat: repeat; /* Simple repeat */
+    background-position: center center; /* Centered */
+    opacity: 0.08; /* Adjust opacity for watermark effect */
+    z-index: 0;
+}
+
+.objectives-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem;
+    justify-items: center;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+    border: 1px solid #E0D8BF; /* Subtle border */
+}
+
+.objective-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    max-width: 380px;
+    width: 100%;
+    border: 1px solid #E0D8BF; /* Subtle border */
+    position: relative;
+    overflow: hidden;
+}
+
+.objective-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: none; /* Removed mandala from here */
+    background-size: auto; /* Set to auto when no image */
+    background-repeat: no-repeat; /* No repeat when no image */
+    opacity: 0; /* No opacity needed if no background */
+    z-index: 0;
+}
+
+.objective-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+}
+
+.objective-icon {
+    width: 90px;
+    height: 90px;
+    background: linear-gradient(135deg, #CD5C5C 0%, #B22222 100%); /* Fiery red gradient */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    position: relative;
+    z-index: 1;
+}
+
+.objective-icon i {
+    font-size: 2.5rem;
+    color: #FFD700; /* Gold */
+}
+
+.objective-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #8B4513;
+    position: relative;
+    z-index: 1;
+}
+
+.objective-card p {
+    color: #6A6A6A;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Features Section */
+.features {
+    background: #FDF7E4;
+    position: relative;
+    overflow: hidden;
+}
+
+.features::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/mandala2.png'); /* Changed to mandala2.png */
+    background-size: 200px 200px; /* Set size to 200px 200px */
+    background-repeat: repeat; /* Simple repeat */
+    background-position: center center; /* Centered */
+    opacity: 0.08; /* Adjust opacity for watermark effect */
+    z-index: 0;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 3rem;
+    justify-items: center;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+.feature-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    border-left: 6px solid #CD5C5C; /* Fiery red border */
+    transition: all 0.4s ease;
+    max-width: 450px;
+    width: 100%;
+    text-align: left;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: none; /* Removed mandala from here */
+    background-size: auto;
+    background-repeat: no-repeat;
+    opacity: 0; /* No opacity needed if no background */
+    z-index: 0;
+    border-radius: 20px;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px) translateX(0px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+}
+
+.feature-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #FFD700; /* Gold */
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.feature-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: #8B4513;
+    position: relative;
+    z-index: 1;
+}
+
+.feature-card p {
+    color: #6A6A6A;
+    line-height: 1.8;
+    position: relative;
+    z-index: 1;
+}
+
+/* Page Header */
+.page-header {
+    background: linear-gradient(135deg, #CD5C5C 0%, #B22222 100%);
+    color: white;
+    padding: 10rem 0 5rem;
+    text-align: center;
+    margin-top: 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/mandala2.png'); /* Changed to mandala2.png */
+    background-size: 200px 200px; /* Set size to 200px 200px */
+    background-repeat: repeat; /* Simple repeat */
+    background-position: center center; /* Centered */
+    opacity: 0.08; /* Adjust opacity for watermark effect, slightly less opaque */
+    z-index: 0;
+}
+
+.page-header h1 {
+    font-family: 'Kaoly', serif;
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #FFF8DC;
+    position: relative;
+    z-index: 1;
+}
+
+.page-header p {
+    font-size: 1.4rem;
+    opacity: 0.95;
+    color: #FDF7E4;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+}
+
+/* Committee Section */
+.committee {
+    background: #FDF7E4;
+    position: relative;
+    overflow: hidden;
+}
+
+.committee::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/mandala2.png'); /* Changed to mandala2.png */
+    background-size: 200px 200px; /* Set size to 200px 200px */
+    background-repeat: repeat; /* Simple repeat */
+    background-position: center center; /* Centered */
+    opacity: 0.08; /* Adjust opacity for watermark effect */
+    z-index: 0;
+}
+
+.committee-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2.5rem;
+    justify-items: center;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    border: 1px solid #E0D8BF;
+}
+
+.committee-member {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 20px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    max-width: 280px;
+    width: 100%;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    border: 1px solid #E0D8BF;
+    position: relative;
+    overflow: hidden;
+}
+
+.committee-member::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: none; /* Removed mandala from here */
+    background-size: auto;
+    background-repeat: no-repeat;
+    opacity: 0; /* No opacity needed if no background */
+    z-index: 0;
+}
+
+.committee-member:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.member-avatar {
+    width: 90px;
+    height: 90px;
+    background: linear-gradient(135deg, #A0522D 0%, #8B4513 100%); /* Earthy brown gradient */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    position: relative;
+    z-index: 1;
+}
+
+.member-avatar i {
+    font-size: 2.2rem;
+    color: #FFD700; /* Gold */
+}
+
+.member-avatar img.member-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+}
+
+.committee-member h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+    color: #8B4513;
+    position: relative;
+    z-index: 1;
+}
+
+.committee-member p {
+    color: #6A6A6A;
+    font-size: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Advisory Section */
+.advisory {
+    background: #FFF8DC;
+    position: relative;
+    overflow: hidden;
+}
+
+.advisory::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/mandala2.png'); /* Changed to mandala2.png */
+    background-size: 200px 200px; /* Set size to 200px 200px */
+    background-repeat: repeat; /* Simple repeat */
+    background-position: center center; /* Centered */
+    opacity: 0.08; /* Adjust opacity for watermark effect */
+    z-index: 0;
+}
+
+.advisory-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2.5rem;
+    justify-items: center;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+    border: 1px solid #E0D8BF;
+}
+
+.advisory-member {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    max-width: 280px;
+    width: 100%;
+    border: 1px solid #E0D8BF;
+    position: relative;
+    overflow: hidden;
+}
+
+.advisory-member::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: none; /* Removed mandala from here */
+    background-size: auto;
+    background-repeat: no-repeat;
+    opacity: 0; /* No opacity needed if no background */
+    z-index: 0;
+}
+
+.advisory-member:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+}
+
+.advisory-member .member-avatar {
+    background: linear-gradient(135deg, #FFD700 0%, #DAA520 100%); /* Gold gradient */
+}
+
+.member-role {
+    font-family: 'Lora', serif;
+    color: #CD5C5C !important; /* Fiery red for emphasis */
+    font-weight: 600;
+    font-style: italic;
+}
+
+/* Why IIT Section */
+.why-iit {
+    background: #FDF7E4;
+    position: relative;
+    overflow: hidden;
+}
+
+.why-iit::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/mandala2.png'); /* Changed to mandala2.png */
+    background-size: 200px 200px; /* Set size to 200px 200px */
+    background-repeat: repeat; /* Simple repeat */
+    background-position: center center; /* Centered */
+    opacity: 0.08; /* Adjust opacity for watermark effect */
+    z-index: 0;
+}
+
+.why-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.why-text p {
+    font-size: 1.2rem;
+    margin-bottom: 1.8rem;
+    line-height: 2;
+    color: #5A5A5A;
+    text-align: justify;
+}
+
+.why-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+}
+
+.why-feature {
+    text-align: center;
+    padding: 2rem;
+    background: #FFF8DC;
+    border-radius: 20px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    border: 1px solid #E0D8BF;
+    position: relative;
+    overflow: hidden;
+}
+
+.why-feature::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: none; /* Removed mandala from here */
+    background-size: auto;
+    background-repeat: no-repeat;
+    opacity: 0; /* No opacity needed if no background */
+    z-index: 0;
+}
+
+.why-feature:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.why-feature i {
+    font-size: 2.5rem;
+    color: #A0522D; /* Earthy brown */
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.why-feature h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: #8B4513;
+    position: relative;
+    z-index: 1;
+}
+
+.why-feature p {
+    font-size: 1rem;
+    color: #6A6A6A;
+    position: relative;
+    z-index: 1;
+}
+
+/* Event Overview */
+.event-overview {
+    background: #FFF8DC;
+    position: relative;
+    overflow: hidden;
+}
+
+.event-overview::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/mandala2.png'); /* Changed to mandala2.png */
+    background-size: 200px 200px; /* Set size to 200px 200px */
+    background-repeat: repeat; /* Simple repeat */
+    background-position: center center; /* Centered */
+    opacity: 0.08; /* Adjust opacity for watermark effect */
+    z-index: 0;
+}
+
+.overview-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2.5rem;
+    justify-items: center;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+    border: 1px solid #E0D8BF;
+}
+
+.overview-card {
+    text-align: center;
+    padding: 2.5rem;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    max-width: 250px;
+    width: 100%;
+    border: 1px solid #E0D8BF;
+    position: relative;
+    overflow: hidden;
+}
+
+.overview-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: none; /* Removed mandala from here */
+    background-size: auto;
+    background-repeat: no-repeat;
+    opacity: 0; /* No opacity needed if no background */
+    z-index: 0;
+}
+
+.overview-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+}
+
+.overview-card i {
+    font-size: 3rem;
+    color: #CD5C5C; /* Fiery red */
+    margin-bottom: 1.5rem;
+}
+
+.overview-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: #8B4513;
+}
+
+.overview-card p {
+    color: #6A6A6A;
+    font-size: 1rem;
+}
+
+/* Timeline */
+.schedule-day {
+    background: #FDF7E4;
+    position: relative;
+    overflow: hidden;
+}
+
+.schedule-day::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/mandala2.png'); /* Changed to mandala2.png */
+    background-size: 200px 200px; /* Set size to 200px 200px */
+    background-repeat: repeat; /* Simple repeat */
+    background-position: center center; /* Centered */
+    opacity: 0.08; /* Adjust opacity for watermark effect */
+    z-index: 0;
+}
+
+.timeline {
+    max-width: 850px;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 20px;
+    z-index: 1;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background: linear-gradient(180deg, #FFD700 0%, #CD5C5C 100%); /* Gold to red vertical line */
+    transform: translateX(-50%);
+    border-radius: 3px;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4rem;
+    position: relative;
+    width: 100%;
+    min-height: 120px;
+}
+
+/* Timeline marker column */
+.timeline-marker-col {
+    width: 60px;
+    min-width: 60px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.timeline-item .timeline-content {
+    flex: 1;
+    margin-left: 60px;
+}
+
+.timeline-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    margin-left: 0;
+    margin-right: 60px;
+}
+
+.timeline-item::after {
+    display: none;
+}
+
+.timeline-time {
+    background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%); /* Earthy brown gradient */
+    color: #FDF7E4;
+    padding: 0.6rem 1.2rem;
+    border-radius: 30px;
+    font-weight: 600;
+    min-width: 130px;
+    text-align: center;
+    z-index: 2;
+    font-size: 0.95rem;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+.timeline-item:nth-child(odd) .timeline-time {
+    margin-left: 60px;
+}
+
+.timeline-item:nth-child(even) .timeline-time {
+    margin-right: 60px;
+}
+
+.timeline-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    flex: 1;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    text-align: left; /* Keep content left-aligned for readability */
+    border: 1px solid #E0D8BF;
+}
+
+.timeline-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    margin-bottom: 0.8rem;
+    color: #8B4513;
+}
+
+.timeline-content p {
+    color: #6A6A6A;
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+.event-type {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.event-type.ceremonial {
+    background: #FFD700; /* Gold */
+    color: #8B4513;
+}
+
+.event-type.official {
+    background: #CD5C5C; /* Fiery red */
+    color: white;
+}
+
+.event-type.marketplace {
+    background: #228B22; /* Forest Green */
+    color: white;
+}
+
+.event-type.talks {
+    background: #8A2BE2; /* Blue-violet */
+    color: white;
+}
+
+.event-type.cultural {
+    background: #DAA520; /* Darker Gold */
+    color: white;
+}
+
+.event-type.community {
+    background: #4682B4; /* Steel Blue */
+    color: white;
+}
+
+/* Highlights */
+.highlights {
+    background: #FFF8DC;
+    position: relative;
+    overflow: hidden;
+}
+
+.highlights::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/mandala2.png'); /* Changed to mandala2.png */
+    background-size: 200px 200px; /* Set size to 200px 200px */
+    background-repeat: repeat; /* Simple repeat */
+    background-position: center center; /* Centered */
+    opacity: 0.08; /* Adjust opacity for watermark effect */
+    z-index: 0;
+}
+
+.highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem;
+    justify-items: center;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+    border: 1px solid #E0D8BF;
+}
+
+.highlight-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    max-width: 380px;
+    width: 100%;
+    text-align: left;
+    border: 1px solid #E0D8BF;
+    position: relative;
+    overflow: hidden;
+}
+
+.highlight-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: none; /* Removed mandala from here */
+    background-size: auto;
+    background-repeat: no-repeat;
+    opacity: 0; /* No opacity needed if no background */
+    z-index: 0;
+}
+
+.highlight-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+}
+
+.highlight-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #A0522D 0%, #8B4513 100%); /* Earthy brown */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.highlight-icon i {
+    font-size: 2rem;
+    color: #FFD700; /* Gold */
+}
+
+.highlight-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: #8B4513;
+}
+
+.highlight-card ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.highlight-card li {
+    padding: 0.4rem 0;
+    color: #6A6A6A;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.highlight-card li::before {
+    content: '•';
+    color: #CD5C5C; /* Fiery red bullet */
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+/* Registration CTA */
+.registration-cta {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, #B22222 0%, #CD5C5C 100%); /* Fiery red gradient */
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.registration-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/mandala2.png'); /* Changed to mandala2.png */
+    background-size: 200px 200px; /* Set size to 200px 200px */
+    background-repeat: repeat; /* Simple repeat */
+    background-position: center center; /* Centered */
+    opacity: 0.1; /* Adjust opacity for watermark effect */
+    z-index: 0;
+}
+
+.cta-content {
+    position: relative;
+    z-index: 1;
+}
+
+.cta-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    color: #FFD700; /* Gold */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.cta-content p {
+    font-size: 1.3rem;
+    margin-bottom: 3rem;
+    opacity: 0.95;
+    color: #FDF7E4;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-button.primary {
+    background: #FFD700; /* Gold */
+    color: #8B4513; /* Earthy brown */
+    box-shadow: 0 6px 20px rgba(255,215,0,0.4);
+}
+
+.cta-button.primary:hover {
+    background: #FFC000;
+    box-shadow: 0 8px 25px rgba(255,192,0,0.6);
+}
+
+.cta-button.secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid #FFD700; /* Gold border */
+    box-shadow: none;
+}
+
+.cta-button.secondary:hover {
+    background: #FFD700;
+    color: #8B4513;
+    box-shadow: 0 4px 15px rgba(255,215,0,0.3);
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(135deg, #B22222 0%, #CD5C5C 100%); /* Vibrant red gradient for footer */
+    color: white;
+    padding: 4rem 0 2rem;
+    text-align: center;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 2.5rem;
+    text-align: center;
+    justify-items: center;
+    padding: 0 20px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 1.5rem;
+    color: #FFD700; /* Gold */
+    font-size: 1.8rem;
+}
+
+.footer-section p {
+    font-size: 1rem;
+    color: #E0E0E0;
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-section a {
+    color: #FFD700; /* Gold */
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+.footer-section a:hover {
+    color: #FFA500; /* Orange-gold */
+}
+
+.social-links {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 215, 0, 0.2); /* Semi-transparent gold */
+    border: 2px solid #FFD700; /* Gold border */
+    border-radius: 50%;
+    color: #FFD700; /* Gold */
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+}
+
+.social-link:hover {
+    background: #FFD700; /* Gold background on hover */
+    color: #8B4513; /* Earthy brown text on hover */
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2.5rem;
+    border-top: 1px solid #5A5A5A;
+    color: #B0B0B0;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .hero-title {
+        font-size: 3.5rem;
+    }
+    .section-title {
+        font-size: 3rem;
+    }
+    .why-content {
+        grid-template-columns: 1fr;
+    }
+    .why-text p {
+        text-align: center;
+    }
+    .timeline::before {
+        left: 20px;
+    }
+    .timeline-item .timeline-content,
+    .timeline-item:nth-child(even) .timeline-content {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .timeline-item {
+        flex-direction: column !important;
+        align-items: flex-start;
+        padding-left: 50px;
+    }
+    .timeline-item::after {
+        left: 11px !important;
+    }
+    .timeline-time {
+        margin: 0 auto 1.5rem;
+    }
+    .timeline-content {
+        margin: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 80px; /* Adjust for new navbar height */
+        flex-direction: column;
+        background-color: #A0522D; /* Earthy brown */
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        padding: 2.5rem 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-link {
+        padding: 1rem 0;
+        border-radius: 0;
+        width: 100%;
+    }
+
+    .nav-link::before {
+        height: 2px;
+    }
+
+    .hero {
+        padding: 3rem 0;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .hero-details {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .overview-text {
+        text-align: left; /* Revert to left for better readability on small screens */
+    }
+
+    .feature-card, .highlight-card {
+        text-align: center; /* Center these cards for better mobile display */
+    }
+
+    .highlight-card ul {
+        text-align: center;
+    }
+
+    .highlight-card li {
+        display: block; /* Make list items block again for centering */
+        padding-left: 0;
+    }
+    .highlight-card li::before {
+        position: static;
+        margin-right: 0.5rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cta-button {
+        width: 80%;
+        max-width: 300px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    .timeline-time {
+        min-width: 100px;
+        padding: 0.5rem 0.8rem;
+    }
+    .timeline-content {
+        padding: 1.5rem;
+    }
+}
+
+.homepage-logo {
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 2.5rem auto;
+    border: 3px solid #FFD700;
+    background: #fff8dc;
+    box-shadow: 0 8px 32px rgba(139,69,19,0.18);
+}
+
+@font-face {
+    font-family: 'Kaoly';
+    src: url('fonts/Kaoly Demo-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.lang-dropdown, select#lang-switch {
+    background: linear-gradient(135deg, #B22222 0%, #CD5C5C 100%);
+    color: #FFD700;
+    border: 2px solid #FFD700;
+    border-radius: 18px;
+    padding: 0.5rem 2.2rem 0.5rem 1.2rem;
+    font-size: 1.08rem;
+    font-family: 'Lora', serif;
+    font-weight: 600;
+    box-shadow: 0 2px 10px rgba(139,0,0,0.08);
+    appearance: none;
+    outline: none;
+    transition: border 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    margin-left: 1.5rem;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23FFD700" height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M7.293 7.293a1 1 0 011.414 0L10 8.586l1.293-1.293a1 1 0 111.414 1.414l-2 2a1 1 0 01-1.414 0l-2-2a1 1 0 010-1.414z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 0.8rem center;
+    background-size: 1.2em;
+}
+select#lang-switch:focus, select#lang-switch:hover {
+    border: 2.5px solid #FFD700;
+    box-shadow: 0 4px 16px rgba(139,0,0,0.13);
+    color: #FFF8DC;
+}
+@media (max-width: 768px) {
+    .lang-dropdown, select#lang-switch {
+        margin-left: 0.5rem;
+        font-size: 1rem;
+        padding: 0.4rem 2rem 0.4rem 1rem;
+    }
+}
+
+@font-face {
+    font-family: 'JosefinSans';
+    src: url('fonts/JosefinSans-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+p, .overview-text, .why-text p, .timeline-content p, .feature-card p, .committee-member p, .footer-section p, .highlight-card p, .cta-content p {
+    font-family: 'JosefinSans', 'Lora', serif, sans-serif !important;
+} 
